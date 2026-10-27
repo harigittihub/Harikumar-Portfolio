@@ -1,15 +1,14 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Layers, Terminal, FolderKanban, BookOpen, Cpu, Mail } from "lucide-react";
+import { Layers, Terminal, FolderKanban, Cpu, Mail } from "lucide-react";
 import { useState } from "react";
 
 const navItems = [
   { name: "Terminal", href: "#work", icon: <Terminal className="w-4 h-4" /> },
   { name: "Projects", href: "#process", icon: <FolderKanban className="w-4 h-4" /> },
-  { name: "Fav Papers", href: "#publications", icon: <BookOpen className="w-4 h-4" /> },
   { name: "Stacks", href: "#about", icon: <Cpu className="w-4 h-4" /> },
-  { name: "Connect", href: "#contact", icon: <Mail className="w-4 h-4" /> },
+  { name: "Connect", href: "#studio", icon: <Mail className="w-4 h-4" /> },
 ];
 
 export function Nav() {

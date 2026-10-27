@@ -1,13 +1,12 @@
 import { Nav } from "../components/Nav";
 import { FeatureCard } from "../components/FeatureCard";
 import { GridHoverEffect } from "../components/GridHoverEffect";
-import { ContactForm } from "../components/ContactForm";
+import { ContactDrawer } from "../components/ContactDrawer";
 import { HeroGraphic } from "../components/HeroGraphic";
 import { VisionGraphic } from "../components/VisionGraphic";
 import { Typewriter } from "../components/Typewriter";
-import { PublicationList } from "../components/PublicationList";
 import { TerminalEditor } from "../components/TerminalEditor";
-import { Gamepad2, GitMerge, BrainCircuit, Code2, Mail, BookOpen } from "lucide-react";
+import { Gamepad2, GitMerge, BrainCircuit, Code2, Eye, FileText, Download } from "lucide-react";
 import Link from "next/link";
 
 function GithubIcon() {
@@ -43,6 +42,7 @@ function TensorTonicIcon() {
 export default function Home() {
   return (
     <>
+      <ContactDrawer />
       <GridHoverEffect />
       <main className="flex-1 flex flex-col pt-16 relative z-10 transition-colors duration-500 pb-16 overflow-x-hidden">
         <Nav />
@@ -82,42 +82,51 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeatureCard
+              icon={<BrainCircuit size={32} />}
+              title="NASA Turbofan RUL Prediction"
+              description="Predictive maintenance on NASA CMAPSS dataset — compares XGBoost vs LSTM to forecast Remaining Useful Life of jet engines, with a full Streamlit deployment pipeline."
+              delay={0}
+              link="https://github.com/harigittihub/NASA-Turbofan-Predictive_Maintenance"
+            />
+            <FeatureCard
+              icon={<Eye size={32} />}
+              title="Two-Speed AI Inspector"
+              description="Industrial defect detection pipeline: PyTorch PatchCore anomaly detection → fast Jev triage → Claude vision for ambiguous cases. Evaluated with bootstrap confidence intervals. Streamlit demo + FastAPI endpoint."
+              delay={0.15}
+              link="https://github.com/harigittihub/SentinelEdge-a-two-speed-AI-inspector"
+            />
+            <FeatureCard
+              icon={<FileText size={32} />}
+              title="PDF RAG Q&A System"
+              description="PDF question-answering RAG system built in Python — evaluates TF-IDF, dense and hybrid retrieval across chunk sizes on 30 hand-labeled questions, with a citation checker that flags pages cited outside retrieved content."
+              delay={0.3}
+              link="https://github.com/harigittihub/RAG-System"
+            />
+            <FeatureCard
               icon={<Gamepad2 size={32} />}
               title="VR Air Hockey"
               description="VR Air Hockey game built in Unity for Meta Quest 2 with physics-based gameplay and an AI opponent."
-              delay={0}
+              delay={0.45}
               link="https://github.com/harigittihub/vr-air-hockey-unity"
             />
             <FeatureCard
               icon={<GitMerge size={32} />}
               title="Unsupervised Sorting"
               description="Automated object sorting system using a Niryo robotic arm combined with CV and unsupervised machine learning."
-              delay={0.15}
+              delay={0.6}
               link="https://github.com/harigittihub/Unsupervised_Sorting_using_Niryo"
             />
             <FeatureCard
               icon={<BrainCircuit size={32} />}
               title="TensorTonic Solutions"
               description="My complete suite of solutions to TensorTonic problems utilizing Python."
-              delay={0.3}
+              delay={0.75}
               link="https://github.com/harigittihub/TensorTonic-Solutions"
             />
           </div>
         </section>
 
-        {/* Publications Section */}
-        <section id="publications" className="py-24 max-w-5xl mx-auto px-6 w-full relative z-10">
-          <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono text-foreground flex items-center gap-4 tracking-tight">
-              <BookOpen className="h-8 w-8 text-primary" />
-              Some of the publications I liked
-            </h2>
-            <p className="text-secondary text-lg border-l-[3px] border-primary/50 pl-4">
-              Relevant to my field of interest, and some I found interesting.
-            </p>
-          </div>
-          <PublicationList />
-        </section>
+
 
         {/* Developer Environment Section */}
         <section id="about" className="py-24 bg-surface-variant/20 border-y border-surface-outline relative overflow-hidden backdrop-blur-sm">
@@ -130,24 +139,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-24 relative overflow-hidden">
-          <div className="max-w-3xl mx-auto px-6 relative z-10 w-full">
-            <div className="w-full h-full flex flex-col justify-center items-center text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-4">
-                <Mail className="h-8 w-8 text-tertiary" />
-                Incoming Transmissions
-              </h2>
-              <p className="text-secondary mb-10 text-lg">
-                Found a bug in my code? Want to build a robot army? Or just say hi?
-                <br />Drop a message below. I promise my spam filter isn't *too* aggressive. 🤖
-              </p>
-              <div className="w-full text-left">
-                <ContactForm />
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Initiate Link */}
         <section id="studio" className="py-24 relative overflow-hidden">
@@ -177,6 +169,7 @@ export default function Home() {
                   {social.icon}
                 </Link>
               ))}
+
             </div>
           </div>
         </section>

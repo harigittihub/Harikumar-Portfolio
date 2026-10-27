@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 const phrases = [
-  "If it works don't do anything.",
+  "MSc Student Artificial Intelligence in Industrial Application",
   "Building Neural Architectures.",
   "Teaching robots how to see.",
   "Debugging the unpredictable."
@@ -17,7 +17,7 @@ export function Typewriter() {
     let timer: NodeJS.Timeout;
 
     const currentPhrase = phrases[index];
-    
+
     if (isDeleting) {
       if (text.length > 0) {
         timer = setTimeout(() => setText(currentPhrase.substring(0, text.length - 1)), 30);
