@@ -65,7 +65,7 @@ export function HeroGraphic() {
          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
          className="absolute bottom-12 right-12 md:-right-4 px-4 py-2 bg-surface/80 backdrop-blur-md border border-surface-outline rounded-3xl shadow-lg font-mono text-primary text-sm shadow-black/50"
        >
-          K-Means Cᵢ
+          Sigmoid
        </motion.div>
 
        <motion.div 

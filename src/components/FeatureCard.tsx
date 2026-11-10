@@ -16,10 +16,10 @@ export function FeatureCard({ title, description, icon, delay = 0, link }: { tit
 
   const content = (
     <motion.div 
-       initial={{ opacity: 0, y: 20 }}
+       initial={{ opacity: 0, y: 16 }}
        whileInView={{ opacity: 1, y: 0 }}
-       viewport={{ once: true }}
-       transition={{ duration: 0.5, delay }}
+       viewport={{ once: true, margin: "200px" }}
+       transition={{ duration: 0.45, delay }}
        onMouseMove={handleMouseMove}
        className="relative bg-surface/80 backdrop-blur-sm border border-surface-outline p-6 rounded-xl hover:bg-surface-variant transition-colors group duration-300 shadow-sm h-full flex flex-col overflow-hidden"
     >

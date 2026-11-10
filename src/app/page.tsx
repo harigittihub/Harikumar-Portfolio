@@ -6,7 +6,7 @@ import { HeroGraphic } from "../components/HeroGraphic";
 import { VisionGraphic } from "../components/VisionGraphic";
 import { Typewriter } from "../components/Typewriter";
 import { TerminalEditor } from "../components/TerminalEditor";
-import { Gamepad2, GitMerge, BrainCircuit, Code2, Eye, FileText, Download } from "lucide-react";
+import { Gamepad2, GitMerge, BrainCircuit, Code2, Eye, FileText } from "lucide-react";
 import Link from "next/link";
 
 function GithubIcon() {
@@ -42,10 +42,10 @@ function TensorTonicIcon() {
 export default function Home() {
   return (
     <>
+      <Nav />
       <ContactDrawer />
       <GridHoverEffect />
-      <main className="flex-1 flex flex-col pt-16 relative z-10 transition-colors duration-500 pb-16 overflow-x-hidden">
-        <Nav />
+      <main className="flex-1 flex flex-col pt-16 relative z-10 transition-colors duration-500 pb-16 overflow-x-clip">
         {/* Hero Section */}
         <section id="work" className="min-h-[85vh] flex items-center max-w-7xl mx-auto px-6 w-full relative">
           <div className="grid md:grid-cols-2 gap-12 items-center w-full">
